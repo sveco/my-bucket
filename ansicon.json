@@ -1,0 +1,40 @@
+{
+    "version": "1.66",
+    "homepage": "https://github.com/adoxa/ansicon",
+    "license": "GPL2",
+    "url": "https://github.com/adoxa/ansicon/releases/download/v1.66/ansi166.zip",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/adoxa/ansicon/releases/download/v1.66/ansi166.zip",
+            "bin": [
+                [
+                    "x64/ansicon.exe"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://github.com/adoxa/ansicon/releases/download/v1.66/ansi166.zip",
+            "bin": [
+                [
+					"x86/ansicon.exe"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "github": "https://github.com/adoxa/ansicon"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/adoxa/ansicon/releases/download/v$version/ansi$version.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/adoxa/ansicon/releases/download/v$version/ansi$version.zip"
+            }
+        }
+    },
+    "post_install": "
+run \"$dir/x64/ansicon.exe\" \"-i\"
+	"
+}
