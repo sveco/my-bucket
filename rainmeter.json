@@ -1,0 +1,19 @@
+﻿{
+    "version":  "4.1-r2824",
+    "license":  "GPL2",
+    "url":  "https://github.com/rainmeter/rainmeter/releases/download/v4.1.0.2824/Rainmeter-4.1-r2824-beta.exe#/Rainmeter_Installer.7z",
+    "depends":  "",
+    "homepage":  "https://www.rainmeter.net",
+    "hash":  "0fe5308e41c7eda4fae75157fc1a9e580f809be1f7019a6be3aa517fc7cca352",
+    "bin":  "Rainmeter.exe",
+    "checkver": {
+        "github": "https://github.com/rainmeter/rainmeter"
+    },
+    "autoupdate": {
+        "url": "https://github.com/rainmeter/rainmeter/releases/download/v4.1.0.2824/Rainmeter-$version-beta.exe"
+    },
+    "post_install": "
+# Copy settings to portable location
+xcopy \"d:\\Portable Apps\\settings\\rainmeter\\*.*\" $dir \"/S\"
+	"	
+}
