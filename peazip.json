@@ -1,0 +1,38 @@
+{
+    "homepage": "http://www.peazip.org",
+    "license": "LGPL3",
+    "version": "6.6.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://sourceforge.net/projects/peazip/files/6.6.0/peazip_portable-6.6.0.WIN64.zip/download#/dl.7z",
+            "extract_dir": "peazip_portable-6.6.0.WIN64"
+        },
+        "32bit": {
+            "url": "https://sourceforge.net/projects/peazip/files/6.6.0/peazip_portable-6.6.0.WINDOWS.zip/download#/dl.7z",
+            "extract_dir": "peazip_portable-6.6.0.WINDOWS"
+        }
+    },
+    "bin": "peazip.exe",
+    "shortcuts": [
+        [
+            "peazip.exe",
+            "PeaZip"
+        ]
+    ],
+    "checkver": {
+        "url": "http://www.peazip.org/download-installer-p-windows.html",
+        "re": "^.*PeaZip[\\S\\s]*?(\\d\\.\\d\\.\\d)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://sourceforge.net/projects/peazip/files/$matchVersion/peazip_portable-$matchVersion.WIN64.zip/download#/dl.7z",
+				"extract_dir": "peazip_portable-$version.WIN64"
+            },
+            "32bit": {
+                "url": "https://sourceforge.net/projects/peazip/files/$matchVersion/peazip_portable-$matchVersion.WINDOWS.zip/download#/dl.7z",
+				"extract_dir": "peazip_portable-$version.WINDOWS"				
+            }
+        }
+    }
+}
